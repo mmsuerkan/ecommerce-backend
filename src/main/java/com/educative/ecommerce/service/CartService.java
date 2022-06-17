@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +29,7 @@ public class CartService {
 
     public void addToCart(AddToCartDto addToCartDto, Product product, User user) {
         Cart cart = new Cart(product, addToCartDto.getQuantity(), user);
+        cart.setCreatedDate(new Date());
         cartRepository.save(cart);
     }
 
