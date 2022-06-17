@@ -25,7 +25,7 @@ public class UserController {
         return userService.signUp(signupDto);
     }
     @PostMapping("/signIn")
-    public SignInResponseDto Signup(@RequestBody SignInDto signInDto) throws CustomException, AuthenticationFailException {
+    public SignInResponseDto signIn(@RequestBody SignInDto signInDto) throws CustomException, AuthenticationFailException {
         return userService.signIn(signInDto);
     }
 
